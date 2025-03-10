@@ -1,0 +1,242 @@
+#creating dataframe by using mysql
+import pymysql
+import pandas as pd
+import pypyodbc as odbc
+connection1=pymysql.connect(host='localhost',user='root',password='root',db='mysqldb',port=3333)
+c1=connection1.cursor()
+c1.execute('select * from mysqlapp_mysqldata;')
+data1=c1.fetchall()
+f_name=[]
+l_name=[]
+email_id=[]
+salary=[]
+location=[]
+hometown=[]
+company=[]
+skill=[]
+percentage=[]
+gender=[]
+qualification=[]
+passedoutyear=[]
+marital_status=[]
+ownhouse=[]
+owncar=[]
+emi=[]
+height=[]
+monthly_expense=[]
+bonus=[]
+dob=[]
+experience=[]
+doj=[]
+age=[]
+for i in data1:
+    f_name.append(i[1])
+    l_name.append(i[2])
+    email_id.append(i[3])
+    salary.append(i[4])
+    location.append(i[5])
+    hometown.append(i[6])
+    company.append(i[7])
+    skill.append(i[8])
+    percentage.append(i[9])
+    gender.append(i[10])
+    qualification.append(i[11])
+    passedoutyear.append(i[12])
+    marital_status.append(i[13])
+    ownhouse.append(i[14])
+    owncar.append(i[15])
+    emi.append(i[16])
+    height.append(i[17])
+    monthly_expense.append(i[18])
+    bonus.append(i[19])
+    dob.append(i[20])
+    experience.append(i[21])
+    doj.append(i[22])
+    age.append(i[23])
+emp1={'Empfirst_name':f_name,'Emplast_name':l_name,'Empemail_id':email_id,'Empsalary':salary,'Emplocation':location,'Emphometown':hometown,'Empcompany':company,
+      'Empskill':skill,'Emppercentage':percentage,'Empgender':gender,'Empqualification':qualification,'Emppassedoutyear':passedoutyear,'Empmarital_status':marital_status,
+      'Empownhouse':ownhouse,'Empowncar':owncar,'Empemi':emi,'Empheight':height,'Empmothly_expenses':monthly_expense,'Empbonus':bonus,'Empdob':dob,'Empexperience':experience,
+      'Empdoj':doj,'Empage':age}
+msdf=pd.DataFrame(emp1)
+#creating dataframe by using sqlserver
+connection1 = odbc.connect('DRIVER={SQL Server};Server=SANDESH\\SQLEXPRESS;Database=sqlserverdb1; Trusted_Connection=yes')
+c = connection1.cursor()
+c.execute('SELECT * FROM dbo.sqlserverdata')
+data2 = c.fetchall()
+f_name=[]
+l_name=[]
+email_id=[]
+salary=[]
+location=[]
+hometown=[]
+company=[]
+skill=[]
+height=[]
+percentage=[]
+gender=[]
+qualification=[]
+passedoutyear=[]
+marital_status=[]
+ownhouse=[]
+owncar=[]
+emi=[]
+height=[]
+monthly_expense=[]
+bonus=[]
+dob=[]
+experience=[]
+doj=[]
+age=[]
+for i in data2:
+    f_name.append(i[1])
+    l_name.append(i[2])
+    email_id.append(i[3])
+    salary.append(i[4])
+    location.append(i[5])
+    hometown.append(i[6])
+    company.append(i[7])
+    skill.append(i[8])
+    percentage.append(i[9])
+    gender.append(i[10])
+    qualification.append(i[11])
+    passedoutyear.append(i[12])
+    marital_status.append(i[13])
+    ownhouse.append(i[14])
+    owncar.append(i[15])
+    emi.append(i[16])
+    height.append(i[17])
+    monthly_expense.append(i[18])
+    bonus.append(i[19])
+    dob.append(i[20])
+    experience.append(i[21])
+    doj.append(i[22])
+    age.append(i[23])
+emp2={'Empfirst_name':f_name,'Emplast_name':l_name,'Empemail_id':email_id,'Empsalary':salary,'Emplocation':location,'Emphometown':hometown,'Empcompany':company,
+      'Empskill':skill,'Emppercentage':percentage,'Empgender':gender,'Empqualification':qualification,'Emppassedoutyear':passedoutyear,'Empmarital_status':marital_status,
+      'Empownhouse':ownhouse,'Empowncar':owncar,'Empemi':emi,'Empheight':height,'Empmothly_expenses':monthly_expense,'Empbonus':bonus,'Empdob':dob,'Empexperience':experience,
+      'Empdoj':doj,'Empage':age}
+ssdf=pd.DataFrame(emp2)
+print(ssdf)
+#creating dataframe by using textfile
+data3=open('textdata.txt').readlines()
+f_name=[]
+l_name=[]
+email_id=[]
+salary=[]
+location=[]
+hometown=[]
+company=[]
+skill=[]
+percentage=[]
+gender=[]
+qualification=[]
+passedoutyear=[]
+marital_status=[]
+ownhouse=[]
+owncar=[]
+emi=[]
+height=[]
+monthly_expense=[]
+bonus=[]
+dob=[]
+experience=[]
+doj=[]
+age=[]
+for i in data3[:]:
+    x=i.replace('\n',',').split(',')
+    f_name.append(x[1])
+    l_name.append(x[2])
+    email_id.append(x[3])
+    salary.append(x[4])
+    location.append(x[5])
+    hometown.append(x[6])
+    company.append(x[7])
+    skill.append(x[8])
+    percentage.append(x[9])
+    gender.append(x[10])
+    qualification.append(x[11])
+    passedoutyear.append(x[12])
+    marital_status.append(x[13])
+    ownhouse.append(x[14])
+    owncar.append(x[15])
+    emi.append(x[16])
+    height.append(x[17])
+    monthly_expense.append(x[18])
+    bonus.append(x[19])
+    dob.append(x[20])
+    experience.append(x[21])
+    doj.append(x[22])
+    age.append(x[23])
+emp3={'Empfirst_name':f_name,'Emplast_name':l_name,'Empemail_id':email_id,'Empsalary':salary,'Emplocation':location,'Emphometown':hometown,'Empcompany':company,
+      'Empskill':skill,'Emppercentage':percentage,'Empgender':gender,'Empqualification':qualification,'Emppassedoutyear':passedoutyear,'Empmarital_status':marital_status,
+      'Empownhouse':ownhouse,'Empowncar':owncar,'Empemi':emi,'Empheight':height,'Empmothly_expenses':monthly_expense,'Empbonus':bonus,'Empdob':dob,'Empexperience':experience,
+      'Empdoj':doj,'Empage':age}
+tfdf=pd.DataFrame(emp3)
+
+#creating dataframe by using excelfile
+data4=pd.read_excel('exceldata.xlsx')
+f_name=[]
+l_name=[]
+email_id=[]
+salary=[]
+location=[]
+hometown=[]
+company=[]
+skill=[]
+percentage=[]
+gender=[]
+qualification=[]
+passedoutyear=[]
+marital_status=[]
+ownhouse=[]
+owncar=[]
+emi=[]
+height=[]
+monthly_expense=[]
+bonus=[]
+dob=[]
+experience=[]
+doj=[]
+age=[]
+for i,r in data4.iterrows():
+    f_name.append(r['first_name'])
+    l_name.append(r['last_name'])
+    email_id.append(r['email_id'])
+    salary.append(r['salary'])
+    location.append(r['location'])
+    hometown.append(r['hometown'])
+    company.append(r['company'])
+    skill.append(r['skill'])
+    percentage.append(r['percentage'])
+    gender.append(r['gender'])
+    qualification.append(r['qualification'])
+    passedoutyear.append(r['passedoutyear'])
+    marital_status.append(r['maritalStatus'])
+    ownhouse.append(r['ownHouse'])
+    owncar.append(r['ownCar'])
+    emi.append(r['emi'])
+    height.append(r['height'])
+    monthly_expense.append(r['monthly_expenses'])
+    bonus.append(r['bonus'])
+    dob.append(r['dob'])
+    experience.append(r['experience'])
+    doj.append(r['doj'])
+    age.append(r['age'])
+emp4={'Empfirst_name':f_name,'Emplast_name':l_name,'Empemail_id':email_id,'Empsalary':salary,'Emplocation':location,'Emphometown':hometown,'Empcompany':company,
+      'Empskill':skill,'Emppercentage':percentage,'Empgender':gender,'Empqualification':qualification,'Emppassedoutyear':passedoutyear,'Empmarital_status':marital_status,
+      'Empownhouse':ownhouse,'Empowncar':owncar,'Empemi':emi,'Empheight':height,'Empmothly_expenses':monthly_expense,'Empbonus':bonus,'Empdob':dob,'Empexperience':experience,
+      'Empdoj':doj,'Empage':age}
+xldf=pd.DataFrame(emp4)
+finaldf=pd.concat([msdf,ssdf,xldf,tfdf])
+connection3=pymysql.connect(host='localhost',user='root',password='root',db='finaldb',port=3333)
+c=connection3.cursor()
+for i,j in finaldf.iterrows():
+    c.execute('insert into finalemp values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+              (j['Empfirst_name'],j['Emplast_name'],j['Empemail_id'],
+               j['Empsalary'],j['Emplocation'],j['Emphometown'],
+               j['Empcompany'],j['Empskill'],j['Emppercentage'],
+               j['Empgender'],j['Empqualification'],j['Emppassedoutyear'],
+               j['Empmarital_status'],j['Empownhouse'],j['Empowncar'],j['Empemi'],
+               j['Empheight'],
+               j['Empmothly_expenses'],j['Empbonus'],j['Empdob'],j['Empexperience'],j['Empdoj'],j['Empage']))
+    connection3.commit()
