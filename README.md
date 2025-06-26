@@ -1,5 +1,7 @@
-🍽️ Zomato Restaurant Analysis Dashboard
-📊 Overview
+## 🍽️ Zomato Restaurant Analysis Dashboard
+
+**📊 Overview**
+
 This project presents an interactive Power BI dashboard built using Zomato restaurant data (2010–2018), covering 8,652+ restaurants across 43 cities in 1 country. It enables comprehensive exploration of restaurant trends, customer preferences, and service patterns across regions.
 
 ****🔍 Key Insights****
