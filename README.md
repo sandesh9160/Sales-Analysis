@@ -42,13 +42,13 @@ Zomato.csv – Cleaned dataset
 Uncovered that North Indian cuisine dominates the dataset with 900+ restaurants
 Found cities with highest delivery and table booking options
 Helped identify trends for data-driven business decisions for restaurant marketing
-
 Open the .pbix file in Power BI Desktop.
-
 Connect to the dataset if needed and refresh the visuals.
 
-🤝 Contribution
+## 🤝 Contribution**
+
 Feel free to raise issues or suggestions. Contributions are welcome!
 
-📜 License
+## 📜 License
+
 This project is for educational purposes and analysis only. The data belongs to Zomato and is used under fair use for non-commercial academic insights.
